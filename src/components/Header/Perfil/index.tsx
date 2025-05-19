@@ -10,7 +10,7 @@ const HeaderPerfil = () => (
         <Link to={'/'}>
           <li>Restaurante</li>
         </Link>
-        <li>
+        <li className="logo-li">
           <Link to={'/'}>
             <img src={logo} alt="EFood" />
           </Link>
