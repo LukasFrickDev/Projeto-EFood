@@ -18,6 +18,8 @@ const ProductList = ({ restaurants }: Props) => {
                 image={product.foto}
                 title={product.nome}
                 description={product.descricao}
+                portion={product.porcao}
+                price={product.preco}
               />
             </li>
           ))
