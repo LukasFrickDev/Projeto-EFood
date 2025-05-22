@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
@@ -25,6 +25,14 @@ export const Container = styled.div`
     width: 300px;
     height: 167px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 380px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 370px;
+    }
   }
 `
 
@@ -63,6 +71,12 @@ export const ModalContainer = styled.div`
     padding: 8px;
     cursor: pointer;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+    max-height: 75vh;
+    height: 100%;
+  }
 `
 export const Image = styled.div`
   padding: 32px 24px 32px 32px;
@@ -70,6 +84,13 @@ export const Image = styled.div`
     width: 280px;
     height: 280px;
     object-fit: cover;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
   }
 `
 export const Content = styled.div`
@@ -96,5 +117,17 @@ export const Content = styled.div`
 
   ${ButtonContainer} {
     max-width: 220px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 0px 16px;
+
+    h4 {
+      padding: 0 0 16px;
+    }
+
+    ${ButtonContainer} {
+      max-width: 100%;
+    }
   }
 `

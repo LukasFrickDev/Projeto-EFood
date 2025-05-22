@@ -2,6 +2,9 @@ import { useState } from 'react'
 import Button from '../Button'
 import * as S from './styles'
 import fechar from '../../assets/fechar.png'
+import { add, open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+import { Restaurants } from '../../pages/Home'
 
 interface Props {
   image: string
@@ -51,6 +54,22 @@ const Products = ({ image, title, description, portion, price, id }: Props) => {
       portion: portion,
       price: price
     })
+  }
+
+  const dispatch = useDispatch()
+
+  const addCart = () => {
+    dispatch(
+      add({
+        foto: image,
+        preco: price,
+        id: id,
+        nome: title,
+        descricao: description,
+        porcao: portion
+      })
+    )
+    dispatch(open())
   }
 
   return (
@@ -105,7 +124,7 @@ const Products = ({ image, title, description, portion, price, id }: Props) => {
             <Button
               type="button"
               title="Adicionar ao Carrinho"
-              onClick={() => alert('Produto adicionado!')}
+              onClick={addCart}
             >{`Adicionar ao carrinho - ${formataPreco(price)}`}</Button>
           </S.Content>
         </S.ModalContainer>
