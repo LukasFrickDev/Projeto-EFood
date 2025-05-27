@@ -15,6 +15,12 @@ export const HeaderContainer = styled.div`
       line-height: 0;
     }
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    .container {
+      max-width: 85%;
+    }
+  }
 `
 
 export const Title = styled.h2`

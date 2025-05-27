@@ -79,11 +79,30 @@ export const ModalContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    display: block;
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-direction: column;
+    align-items: stretch;
     max-height: 80vh;
-    height: 100%;
-    width: 90%;
+    height: auto;
+    width: 90vw;
+    overflow-y: none;
+    position: relative;
+    padding-bottom: 16px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-height: 80vh;
+    height: auto;
+    width: 90vw;
+    overflow-y: ;
+    position: relative;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: auto;
+    width: 90vw;
+    overflow-y: auto;
+    position: relative;
   }
 `
 export const Image = styled.div`
@@ -98,7 +117,11 @@ export const Image = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 32px 0;
+    padding: 32px 0 32px 16px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 32px;
   }
 `
 export const Content = styled.div`
@@ -128,7 +151,7 @@ export const Content = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    padding: 0px 16px;
+    padding: 32px 16px;
 
     h4 {
       padding: 0 0 16px;
@@ -137,5 +160,9 @@ export const Content = styled.div`
     ${ButtonContainer} {
       max-width: 100%;
     }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 0 32px;
   }
 `
