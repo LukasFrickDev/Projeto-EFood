@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Overlay = styled.div`
@@ -34,6 +34,10 @@ export const SideBar = styled.aside`
   ${ButtonContainer} {
     max-width: 100%;
     width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 80%;
   }
 `
 

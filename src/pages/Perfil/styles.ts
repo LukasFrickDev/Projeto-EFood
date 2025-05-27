@@ -24,7 +24,7 @@ export const CartItem = styled.li`
   padding: 8px 0;
   position: relative;
   margin-bottom: 16px;
-  background-color: ${colors.beige};
+  background-color: ${colors.darkBeige};
 
   img {
     height: 80px;
