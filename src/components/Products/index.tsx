@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import Button from '../Button'
-import * as S from './styles'
-import fechar from '../../assets/fechar.png'
-import { add, open } from '../../store/reducers/cart'
 import { useDispatch } from 'react-redux'
-import { Restaurants } from '../../pages/Home'
+
+import Button from '../Button'
+import fechar from '../../assets/fechar.png'
+
+import { add, open } from '../../store/reducers/cart'
+
+import * as S from './styles'
+import { parseToBrl } from '../../utils'
 
 interface Props {
   image: string
@@ -17,13 +20,6 @@ interface Props {
 
 interface ModalState extends Props {
   isVisible: boolean
-}
-
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 const Products = ({ image, title, description, portion, price, id }: Props) => {
@@ -81,7 +77,7 @@ const Products = ({ image, title, description, portion, price, id }: Props) => {
           <S.Description>{getDescriptionSlice(description)}</S.Description>
           <Button
             type="button"
-            title="Mais Detalhes"
+            title="Clique para Mais Detalhes"
             onClick={() => {
               setModal({
                 isVisible: true,
@@ -113,7 +109,7 @@ const Products = ({ image, title, description, portion, price, id }: Props) => {
             }}
           />
           <S.Image>
-            <img src={image} alt="" />
+            <img src={image} alt={title} />
           </S.Image>
           <S.Content>
             <h4>{title}</h4>
@@ -125,7 +121,7 @@ const Products = ({ image, title, description, portion, price, id }: Props) => {
               type="button"
               title="Adicionar ao Carrinho"
               onClick={addCart}
-            >{`Adicionar ao carrinho - ${formataPreco(price)}`}</Button>
+            >{`Adicionar ao carrinho - ${parseToBrl(price)}`}</Button>
           </S.Content>
         </S.ModalContainer>
       </S.Overlay>

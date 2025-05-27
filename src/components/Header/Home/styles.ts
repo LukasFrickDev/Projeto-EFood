@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../../styles'
+
+import { breakpoints, colors } from '../../../styles'
 
 export const HeaderContainer = styled.div`
   div {
@@ -8,15 +9,19 @@ export const HeaderContainer = styled.div`
     align-items: center;
     padding-top: 64px;
     max-width: 540px;
-    witdh 100%;
+    width: 100%;
+
+    h1 {
+      line-height: 0;
+    }
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   padding-top: 140px;
   padding-bottom: 40px;
   text-align: center;
-  color: ${cores.rosa};
+  color: ${colors.pink};
   font-size: 36px;
   font-weight: 900;
 

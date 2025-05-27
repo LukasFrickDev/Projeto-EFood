@@ -1,10 +1,11 @@
 import { styled } from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.rosa};
-  color: ${cores.beje};
+  background-color: ${colors.pink};
+  color: ${colors.beige};
+  height: 100%;
 `
 export const Title = styled.h2`
   font-size: 16px;
@@ -22,16 +23,22 @@ export const Container = styled.div`
   padding: 8px;
 
   img {
-    width: 300px;
+    width: 100%;
     height: 167px;
     object-fit: cover;
+    display: block;
+    max-width: 100%;
+  }
 
-    @media (max-width: ${breakpoints.desktop}) {
-      width: 380px;
+  @media (max-width: ${breakpoints.desktop}) {
+    img {
+      height: 200px;
     }
+  }
 
-    @media (max-width: ${breakpoints.tablet}) {
-      width: 370px;
+  @media (max-width: ${breakpoints.tablet}) {
+    img {
+      height: 200px;
     }
   }
 `
@@ -54,7 +61,7 @@ export const Overlay = styled.div`
 `
 
 export const ModalContainer = styled.div`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   max-width: 1024px;
   max-height: 344px;
   width: 100%;
@@ -74,8 +81,9 @@ export const ModalContainer = styled.div`
 
   @media (max-width: ${breakpoints.tablet}) {
     display: block;
-    max-height: 75vh;
+    max-height: 80vh;
     height: 100%;
+    width: 90%;
   }
 `
 export const Image = styled.div`
@@ -95,7 +103,7 @@ export const Image = styled.div`
 `
 export const Content = styled.div`
   display: block;
-  color: ${cores.beje};
+  color: ${colors.beige};
   padding-right: 32px;
 
   h4 {

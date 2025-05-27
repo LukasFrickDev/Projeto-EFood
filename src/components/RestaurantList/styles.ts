@@ -15,9 +15,18 @@ export const List = styled.ul`
 
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    row-gap: 24px;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
     row-gap: 24px;
   }

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -8,7 +8,7 @@ export const Imagem = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: ${cores.branco};
+  color: ${colors.white};
   position: relative;
 
   &::after {

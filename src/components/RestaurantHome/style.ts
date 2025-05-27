@@ -1,22 +1,21 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 import { ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branco};
-  border: 1px solid ${cores.rosa};
+  background-color: ${colors.white};
+  border: 1px solid ${colors.pink};
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 472px;
+  height: 100%;
 
   img {
     max-width: 100%;
-    max-height: 217px;
-    width: 100%;
-    height: auto;
+    height: 220px;
     display: block;
     object-fit: cover;
 
@@ -24,9 +23,18 @@ export const Card = styled.div`
     margin-right: 8px;
   }
 
+
 `
 export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 8px;
+
+  ${ButtonLink} {
+    margin-top: auto;
+    max-width: 82px;
+  }
 `
 
 export const TitleContainer = styled.div`

@@ -1,7 +1,8 @@
-import * as S from './style'
 import Tag from '../Tag'
 import Button from '../Button'
 import icon from '../../assets/estrela.png'
+
+import * as S from './style'
 
 type Props = {
   title: string
@@ -32,7 +33,7 @@ const RestaurantHome = ({
         <S.Titulo>{title}</S.Titulo>
         <S.NoteContainer>
           <S.Titulo>{note}</S.Titulo>
-          <img src={icon} alt="estrela" />
+          <img src={icon} alt="Estrela" />
         </S.NoteContainer>
       </S.TitleContainer>
       <S.Descricao>{description}</S.Descricao>

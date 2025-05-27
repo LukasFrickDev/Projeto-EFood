@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react'
-import { Restaurants } from '../../pages/Home'
-import * as S from './styles'
 import { useParams } from 'react-router-dom'
 import { useGetRestCartQuery } from '../../services/api'
 
+import Loader from '../Loader'
+
+import * as S from './styles'
+
 const Banner = () => {
-  const { id } = useParams()
-  const { data: restaurants } = useGetRestCartQuery(id!)
+  const { id } = useParams() as ProductsParams
+  const { data: restaurants } = useGetRestCartQuery(id)
 
   if (!restaurants) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
 
   return (

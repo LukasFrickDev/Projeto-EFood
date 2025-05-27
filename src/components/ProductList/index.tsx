@@ -1,6 +1,6 @@
 import Products from '../Products'
+
 import * as S from './styles'
-import { Restaurants } from '../../pages/Home'
 
 type Props = {
   restaurants: Restaurants[]
